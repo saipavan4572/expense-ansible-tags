@@ -1,0 +1,10 @@
+- name: "configure {{ component }} server"
+  hosts: "{{ component }}"
+  become: yes
+  roles:
+  - "{{ component }}"
+
+# we can run the files dynamically by passing the each component value as input like below
+##[ ec2-user@ip-172-31-16-148 ~/expense-ansible-roles ]$ ansible-playbook main.yaml -e component=db
+##[ ec2-user@ip-172-31-16-148 ~/expense-ansible-roles ]$ ansible-playbook main.yaml -e component=backend
+##[ ec2-user@ip-172-31-16-148 ~/expense-ansible-roles ]$ ansible-playbook main.yaml -e component=frontend

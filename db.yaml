@@ -1,0 +1,7 @@
+- name: configure DB server
+  hosts: db
+  vars_files:
+  - credentials.yaml
+  become: yes
+  roles:        #ansible check for the "roles" folder in the repo and then "db" folder and then it will load main.yaml file under tasks folder
+  - db
