@@ -6,3 +6,20 @@
     ansible.builtin.dnf:
       name: postfix
       state: latest
+
+## sample output response for dynamic inventory
+##[ ec2-user@ip-172-31-23-130 ~/expense-ansible-tags ]$ ansible-playbook -i aws_ec2.yaml -e ansible_user=ec2-user -e ansible_password=DevOps321 dynamic.yaml
+
+# PLAY [install few packages] *************************************************************************************************
+
+# TASK [Gathering Facts] ******************************************************************************************************
+# ok: [ec2-54-210-72-26.compute-1.amazonaws.com]
+
+# TASK [install postfix] ******************************************************************************************************
+# changed: [ec2-54-210-72-26.compute-1.amazonaws.com]
+
+# PLAY RECAP ******************************************************************************************************************
+# ec2-54-210-72-26.compute-1.amazonaws.com : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+#### to know the background process of the command in ansible add -vvv to the above command.
+# [ ec2-user@ip-172-31-23-130 ~/expense-ansible-tags ]$ ansible-playbook -vvv -i aws_ec2.yaml -e ansible_user=ec2-user -e ansible_password=DevOps321 dynamic.yaml
