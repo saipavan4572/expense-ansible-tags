@@ -1,5 +1,7 @@
 - name: configure backend server
   hosts: backend
   become: yes
+  vars_files:
+  - credentials.yaml
   roles:        #ansible check for the "roles" folder and then "backend" folder and then it will load main.yaml file under tasks folder
   - backend
