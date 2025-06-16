@@ -9,21 +9,21 @@
     state: started
     enabled: yes
 
-# - name: delete default website
-#   ansible.builtin.file:
-#     path: /usr/share/nginx/html
-#     state: absent
+- name: delete default website
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
 
-# - name: create html directory
-#   ansible.builtin.file:
-#     path: /usr/share/nginx/html
-#     state: directory
+- name: create html directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory
 
-# - name: download and extract frontend code
-#   ansible.builtin.unarchive:
-#     src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-#     dest: /usr/share/nginx/html
-#     remote_src: yes
+- name: download and extract frontend code
+  ansible.builtin.unarchive:
+    src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+    dest: /usr/share/nginx/html
+    remote_src: yes
 
 - name: run app pre-requisites
   ansible.builtin.import_role:
@@ -37,7 +37,7 @@
     dest: /etc/nginx/default.d/expense.conf
   notify:                     # if there is a change in config then only it will notify to restart the service, otherwise not.
   - restart nginx
-
+  # this "notify" will call the handler yaml file - "restart" service.
 ## if we use ansible handlers then no need to use below task every time to restart the service.
 # - name: restart nginx
 #   ansible.builtin.service:
