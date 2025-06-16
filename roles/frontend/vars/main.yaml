@@ -1,3 +1,4 @@
-BACKEND_API_URL: backend.pspkdevops.online
+#BACKEND_API_URL: backend.pspkdevops.online
+BACKEND_API_URL: backend.pspkdevops.store
 component: frontend
 app_location: /usr/share/nginx/html

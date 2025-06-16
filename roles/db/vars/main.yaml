@@ -1,5 +1,6 @@
 #mysql_root_password: ExpenseApp@1
-login_host: db.pspkdevops.online
+#login_host: db.pspkdevops.online
+login_host: db.pspkdevops.store
 # commented this because we created ansible-value file credentails.yaml file to use vars-files
 # also while running the command need to provide the vault auth password in the command
 

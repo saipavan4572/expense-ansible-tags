@@ -1,5 +1,7 @@
 login_user: root
-login_host: db.pspkdevops.online
+#login_host: db.pspkdevops.online
+login_host: db.pspkdevops.store
 login_password: ExpenseApp@1
-DB_HOST: db.pspkdevops.online
+#DB_HOST: db.pspkdevops.online
+DB_HOST: db.pspkdevops.store
 app_location: /app
