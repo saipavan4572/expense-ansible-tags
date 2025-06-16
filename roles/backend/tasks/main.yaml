@@ -1,3 +1,4 @@
+## Tags can be useful to run only specific tasks of the playbook instead of running the entire playbook.
 - name: disable default nodejs
   ansible.builtin.command: dnf module disable nodejs -y
 
